@@ -27,19 +27,25 @@ public class Exercise8 {
 		// Prints out the first cell of the first table (1.C.)
 		System.out.println("The first element is : \n" + cell.getText());
 		
+		/*-------*/
 		
-		WebElement firstRow = table.findElement(By.tagName("tr"));
+		List<WebElement> rows = (List<WebElement>)table.findElements(By.tagName("tr"));
 		
-		System.out.print("The first row is: "+firstRow.toString());
+		System.out.print("The first row is: ");
 		
+		int rowSize = rows.size();
 		
-		/*
-		List<WebElement> firstRowCells = firstRow.findElements(By.tagName("td"));
-	
-		for(int i=0;i<firstRowCells.size();i++) {
-			System.out.print("The "+(i+1)+" column in row 1 is: "+firstRowCells.get(i).getText()+"\n");
-		}
-		*/
+		for(int row=0; row<rowSize; row++)
+			{
+			List<WebElement> column_Rows = (List<WebElement>) rows.get(row).findElements(By.tagName("td"));
+			int columnSize = column_Rows.size();
+			String cellText = "";
+			for(int column=0;column<columnSize;column++)
+				{
+				cellText = column_Rows.get(column).getText();
+				System.out.print(rows.get(row)+" || ");
+				}
+			}
 		
 		driver.close();
 	}

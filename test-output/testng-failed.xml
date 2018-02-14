@@ -6,4 +6,13 @@
       <class name="excercises.Exercise8"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="excercises.Exercise8">
+        <methods>
+          <include name="testExercise8"/>
+        </methods>
+      </class> <!-- excercises.Exercise8 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
