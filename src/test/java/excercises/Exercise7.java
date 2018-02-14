@@ -10,11 +10,11 @@ import org.testng.annotations.Test;
 public class Exercise7 {
 	
 	@Test
-	public void testExercise7() {
+	public void testExercise7() throws InterruptedException {
 		
 		WebDriver driver = new ChromeDriver();
-		
 		driver.get("http://www.w3schools.com/html/html_forms.asp");
+		
 		
 		WebElement button = driver.findElement(By.xpath("//*[@id='main']/input[4]"));
 		

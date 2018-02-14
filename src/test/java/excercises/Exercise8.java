@@ -1,12 +1,11 @@
 package excercises;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.Select;
 
 public class Exercise8 {
 	
@@ -17,17 +16,17 @@ public class Exercise8 {
 		
 		driver.get("https://the-internet.herokuapp.com/");
 		
-		driver.findElement(By.linkText("Sortable Data Tables")).click();
+		driver.findElement(By.xpath("//*[@id=\'content\']/ul/li[36]/a")).click();
 		
 		// Assigns table 1 to the variable table
-		WebElement table = driver.findElement(By.id("table1"));
+		WebElement table = driver.findElement(By.xpath("//*[@id='table1']"));
 		
 		WebElement cell = table.findElement(By.tagName("td"));
 		
 		// Prints out the first cell of the first table (1.C.)
 		System.out.println("The first element is : \n" + cell.getText());
 		
-		/*-------*/
+		/*-------/
 		
 		List<WebElement> rows = (List<WebElement>)table.findElements(By.tagName("tr"));
 		
@@ -46,7 +45,7 @@ public class Exercise8 {
 				System.out.print(rows.get(row)+" || ");
 				}
 			}
-		
+		*/
 		driver.close();
 	}
 
